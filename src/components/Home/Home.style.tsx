@@ -9,7 +9,6 @@ export const HomeStyle = styled.main`
   h1 {
     font-size: 3rem;
     margin-top: 100px;
-    text-align: center;
   }
 
   p {
