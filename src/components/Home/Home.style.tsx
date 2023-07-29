@@ -9,12 +9,13 @@ export const HomeStyle = styled.main`
   h1 {
     font-size: 3rem;
     margin-top: 100px;
+    text-align: center;
   }
 
   p {
     color: #888;
     margin-top: 30px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 30px;
   }
 `;

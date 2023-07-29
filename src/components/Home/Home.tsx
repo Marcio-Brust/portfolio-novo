@@ -6,7 +6,8 @@ export const Home = () => {
       <h1>Desenvolvedor</h1>
       <div>
         <p>
-          Olá, eu sou Márcio Brust <br /> confira abaixo meus cursos e projetos.
+          Olá, eu sou Márcio Brust !!! <br /> Confira abaixo meus cursos e
+          projetos.
         </p>
       </div>
     </HomeStyle>
