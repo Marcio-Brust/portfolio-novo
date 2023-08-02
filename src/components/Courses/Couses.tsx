@@ -12,7 +12,7 @@ export const Couses = () => {
 
   const cursos = [
     {
-      título: "JavaScript Completo ES6",
+      título: "JavaScript completo ES6",
       instituicao: "Origamid",
       duracao: "37",
     },
@@ -22,12 +22,12 @@ export const Couses = () => {
       duracao: "23",
     },
     {
-      título: "React Completo",
+      título: "React completo",
       instituicao: "Origamid",
       duracao: "18",
     },
     {
-      título: "TypeScript para iniciantes",
+      título: "Typescript para iniciantes",
       instituicao: "Origamid",
       duracao: "11",
     },
