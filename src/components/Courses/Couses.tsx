@@ -1,6 +1,15 @@
+import { useEffect } from "react";
+import useMedia from "../../utils/hooks/useMedia";
 import { CousesStyle } from "./Couses.style";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Couses = () => {
+  const mobile = useMedia("(max-width:50rem)");
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   const cursos = [
     {
       título: "JavaScript Completo ES6",
@@ -31,7 +40,7 @@ export const Couses = () => {
 
   return (
     <>
-      <CousesStyle>
+      <CousesStyle aria-expanded={mobile} data-aos="fade-right">
         <h1>Meus cursos</h1>
         <section>
           {cursos.map((item, index) => (

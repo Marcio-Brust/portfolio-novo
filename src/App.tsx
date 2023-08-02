@@ -3,15 +3,20 @@ import { Header } from "./components/Header/Header";
 import { GlobalStyd } from "./GlobalStyled";
 import { Couses } from "./components/Courses/Couses";
 import { Projects } from "./components/Project/Projects";
+import { MenuContextProvider } from "./Context/MenuContext";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
-      <GlobalStyd />
-      <Header />
-      <Home />
-      <Couses />
-      <Projects />
+      <MenuContextProvider>
+        <GlobalStyd />
+        <Header />
+        <Home />
+        <Couses />
+        <Projects />
+        <Footer />
+      </MenuContextProvider>
     </>
   );
 }

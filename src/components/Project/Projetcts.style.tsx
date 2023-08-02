@@ -9,7 +9,8 @@ export const ProjectStyle = styled.section`
 
   section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: ${(prop) =>
+      prop["aria-expanded"] ? "1fr" : "1fr 1fr 1fr"};
     max-width: 800px;
     margin: 0 auto;
     gap: 20px;
@@ -17,7 +18,6 @@ export const ProjectStyle = styled.section`
     div {
       width: 150px;
       height: 150px;
-      padding: 30px;
       display: flex;
       align-items: center;
       justify-self: center;

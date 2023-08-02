@@ -16,14 +16,16 @@ export const CousesStyle = styled.section`
 
   section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: ${(prop) =>
+      prop["aria-expanded"] ? "1fr" : "1fr 1fr"};
   }
 
   div {
     text-align: start;
     background: #111;
     padding: 20px;
-    width: auto;
+    width: 300px;
+    margin: 0 auto;
 
     h1 {
       font-size: 1rem;
