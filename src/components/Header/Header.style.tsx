@@ -10,7 +10,7 @@ export const HeaderStyle = styled.header`
   height: 60px;
 
   h1 {
-    font-size: 1rem;
+    font-size: 2rem;
     color: #888;
     margin-left: 30px;
   }

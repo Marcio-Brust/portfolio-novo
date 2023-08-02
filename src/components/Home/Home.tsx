@@ -13,8 +13,7 @@ export const Home = () => {
       <h1 data-aos="fade-right">Desenvolvedor</h1>
       <div data-aos="fade-right">
         <p>
-          Olá, eu sou Márcio Brust !!! <br /> Confira abaixo meus cursos e
-          projetos.
+          Olá, sou Márcio Brust ! <br /> Confira abaixo meus cursos e projetos.
         </p>
       </div>
     </HomeStyle>

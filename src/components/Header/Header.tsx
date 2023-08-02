@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <HeaderStyle>
-      <h1>Marcio Wilson Brust</h1>
+      <h1>Dev</h1>
       <Button />
       {mobile ? <MenuMobile /> : <NavMenu />}
     </HeaderStyle>

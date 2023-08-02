@@ -22,7 +22,7 @@ export const Couses = () => {
       duracao: "23",
     },
     {
-      título: "React COmpleto",
+      título: "React Completo",
       instituicao: "Origamid",
       duracao: "18",
     },
@@ -46,7 +46,7 @@ export const Couses = () => {
           {cursos.map((item, index) => (
             <div key={index}>
               <h1>{item.título}</h1>
-              <p>Instuição: {item.instituicao}</p>
+              <p>Instituição: {item.instituicao}</p>
               <p>Duração do curso: {item.duracao} horas</p>
             </div>
           ))}
