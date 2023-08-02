@@ -19,7 +19,7 @@ export const Projects = () => {
 
   return (
     <ProjectStyle aria-expanded={mobile} data-aos="fade-right">
-      <h1>Meus Projetos</h1>
+      <h1>Meus projetos</h1>
       <section>
         <div>
           <a

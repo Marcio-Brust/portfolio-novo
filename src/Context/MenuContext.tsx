@@ -27,7 +27,7 @@ export const MenuContextProvider = ({ children }: MenuProps) => {
   function handleClick() {
     setIsVisible(!isVisible);
   }
-  console.log(isVisible);
+
   const mobile = useMedia("(max-width: 50rem)");
 
   useEffect(() => {
