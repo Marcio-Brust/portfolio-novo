@@ -18,16 +18,15 @@ export const ProjectStyle = styled.section`
     div {
       width: 150px;
       height: 150px;
-      display: flex;
+      display: grid;
       align-items: center;
       justify-self: center;
     }
 
     img {
-      max-width: 150px;
-      max-height: 150px;
-      width: 150;
-      height: 150;
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
     }
   }
 `;
