@@ -12,7 +12,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Popover } from "@mui/material";
 import Typography from "@mui/material/Typography/Typography";
-import Button from "@mui/material/Button/Button";
 import ReactIcon from "../Svg/ReactIcon";
 
 export const Projects = () => {
@@ -21,9 +20,9 @@ export const Projects = () => {
     AOS.init({ duration: 1500 });
   }, []);
 
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -34,97 +33,76 @@ export const Projects = () => {
     setAnchorEl(null);
   };
 
+  const projetos = [
+    {
+      nome: "Great coffee",
+      tecnologias: "Javascript, HTML e CSS",
+      url: "https://marcio-brust.github.io/Projeto-Great-Coffee/Great-Coffee/",
+      urlImg: coffee,
+    },
+    {
+      nome: "Cartão nubank",
+      tecnologias: "Javascript, HTML e CSS",
+      url: "https://marcio-brust.github.io/Projeto-Cart-o-Nubank/Nubank/",
+      urlImg: nubank,
+    },
+    {
+      nome: "RocketBlog",
+      tecnologias: "Javascript, HTML e CSS",
+      url: "https://marcio-brust.github.io/RocketBlog/",
+      urlImg: blog,
+    },
+    {
+      nome: "Tabuleiro de xadrez",
+      tecnologias: "Javascript, HTML e CSS",
+      url: "https://marcio-brust.github.io/Tabuleiro-de-Xadrez/",
+      urlImg: xadrez,
+    },
+    {
+      nome: "Card-Git Márcio",
+      tecnologias: "React",
+      url: "https://rocketcard-cmay-3z0djpd81-marcio-brust.vercel.app/",
+      urlImg: cardMarcio,
+    },
+    {
+      nome: "Pokemon",
+      tecnologias: "React",
+      url: "https://pokemon-six-lemon.vercel.app",
+      urlImg: pokemon,
+    },
+    {
+      nome: "Dogs",
+      tecnologias: "React",
+      url: "https://dogs-ochre-nine.vercel.app",
+      urlImg: dogs,
+    },
+  ];
+
   return (
     <ProjectStyle aria-expanded={mobile} data-aos="fade-right">
       <h1>Meus projetos</h1>
       <section>
-        <div>
-          <Button
-            aria-describedby={id}
-            variant="contained"
-            onClick={handleClick}
-            style={{ fontSize: "8px", background: "#222" }}
-          >
-            Descrição do projeto
-          </Button>
-          <Popover
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-          >
-            <Typography sx={{ p: 2 }}></Typography>
-            <p>
-              Link do projeto:
-              <a
-                href="https://marcio-brust.github.io/Projeto-Great-Coffee/Great-Coffee"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Clique aqui.
-              </a>
-            </p>
-          </Popover>{" "}
-          <img src={coffee} alt="cafe" />
-        </div>
-        <div>
-          <a
-            href="https://marcio-brust.github.io/Projeto-Cart-o-Nubank/Nubank/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={nubank} alt="card" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://marcio-brust.github.io/RocketBlog/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={blog} alt="blog" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://marcio-brust.github.io/Tabuleiro-de-Xadrez/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={xadrez} alt="xadrez" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://rocketcard-cmay-3z0djpd81-marcio-brust.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={cardMarcio} alt="cardMarcio" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://pokemon-six-lemon.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={pokemon} alt="pokemon" />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://dogs-ochre-nine.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={dogs} alt="dogs" />
-          </a>
-        </div>
+        {projetos.map((item) => (
+          <div key={item.nome} aria-describedby={id} onMouseEnter={handleClick}>
+            <img src={item.urlImg} alt="img" />
+            <Popover
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+            >
+              <Typography>
+                <a href={item.url} target="_blank">
+                  Click aqui
+                </a>
+              </Typography>
+            </Popover>
+          </div>
+        ))}
       </section>
     </ProjectStyle>
   );
