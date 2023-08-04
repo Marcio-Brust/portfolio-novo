@@ -20,9 +20,9 @@ export const Projects = () => {
     AOS.init({ duration: 1500 });
   }, []);
 
-  const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLImageElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -83,21 +83,29 @@ export const Projects = () => {
       <h1>Meus projetos</h1>
       <section>
         {projetos.map((item) => (
-          <div key={item.nome} aria-describedby={id} onMouseEnter={handleClick}>
-            <img src={item.urlImg} alt="img" />
+          <div key={item.nome}>
+            <img
+              id={item.nome}
+              aria-describedby={id}
+              onClick={handleClick}
+              src={item.urlImg}
+              alt="img"
+            />
+
             <Popover
               id={id}
               open={open}
               anchorEl={anchorEl}
               onClose={handleClose}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+                vertical: "center",
+                horizontal: "right",
               }}
             >
+              <h1>{item.nome}</h1>
               <Typography>
                 <a href={item.url} target="_blank">
-                  Click aqui
+                  Confira o projeto: Click aqui
                 </a>
               </Typography>
             </Popover>
