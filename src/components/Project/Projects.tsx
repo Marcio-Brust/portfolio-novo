@@ -82,35 +82,64 @@ export const Projects = () => {
     <ProjectStyle aria-expanded={mobile} data-aos="fade-right">
       <h1>Meus projetos</h1>
       <section>
-        {projetos.map((item) => (
-          <div key={item.nome}>
-            <img
-              id={item.nome}
-              aria-describedby={id}
-              onClick={handleClick}
-              src={item.urlImg}
-              alt="img"
-            />
-
-            <Popover
-              id={id}
-              open={open}
-              anchorEl={anchorEl}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: "center",
-                horizontal: "right",
-              }}
-            >
-              <h1>{item.nome}</h1>
-              <Typography>
-                <a href={item.url} target="_blank">
-                  Confira o projeto: Click aqui
-                </a>
-              </Typography>
-            </Popover>
-          </div>
-        ))}
+        <div>
+          <img
+            id={id}
+            aria-describedby={id}
+            onClick={handleClick}
+            src={coffee}
+            alt="img"
+          />
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "center",
+              horizontal: "right",
+            }}
+          >
+            <Typography>
+              <h1>Great coffee</h1>
+              <a
+                href="https://marcio-brust.github.io/Projeto-Great-Coffee/Great-Coffee/"
+                target="_blank"
+              >
+                Confira o projeto: Click aqui
+              </a>
+            </Typography>
+          </Popover>
+        </div>
+        <div>
+          <img
+            id={id}
+            aria-describedby={id}
+            onClick={handleClick}
+            src={nubank}
+            alt="img"
+          />
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "center",
+              horizontal: "right",
+            }}
+          >
+            <Typography>
+              <h1>Cartão nubank</h1>
+              <a
+                href="https://marcio-brust.github.io/Projeto-Cart-o-Nubank/Nubank/"
+                target="_blank"
+              >
+                Confira o projeto: Click aqui
+              </a>
+            </Typography>
+          </Popover>
+        </div>
       </section>
     </ProjectStyle>
   );
