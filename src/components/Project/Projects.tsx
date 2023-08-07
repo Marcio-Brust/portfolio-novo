@@ -13,6 +13,13 @@ import "aos/dist/aos.css";
 import { Popover } from "@mui/material";
 import Typography from "@mui/material/Typography/Typography";
 import ReactIcon from "../Svg/ReactIcon";
+import JavascriptIcon from "../Svg/javascriptIcon";
+import CssIcon from "../Svg/CssIcon";
+import HtmlIcon from "../Svg/HtmlIcon";
+import NextIcon from "../Svg/NextIcon";
+import TailwindIcon from "../Svg/TailwindIcon";
+import StyledComponentIcon from "../Svg/StyledComponentIcon";
+import TypescriptIcon from "../Svg/TypescriptIcon";
 
 export const Projects = () => {
   const mobile = useMedia("(max-width:50rem)");
@@ -20,10 +27,75 @@ export const Projects = () => {
     AOS.init({ duration: 1500 });
   }, []);
 
+  const projetos = [
+    {
+      id: 0,
+      nome: "Great coffee",
+      tecnologias: ["Javascript", "HTML", "CSS"],
+      url: "https://marcio-brust.github.io/Projeto-Great-Coffee/Great-Coffee/",
+      urlImg: coffee,
+    },
+    {
+      id: 1,
+      nome: "Cartão nubank",
+      tecnologias: ["Javascript", "HTML", "CSS"],
+      url: "https://marcio-brust.github.io/Projeto-Cart-o-Nubank/Nubank/",
+      urlImg: nubank,
+    },
+    {
+      id: 2,
+      nome: "RocketBlog",
+      tecnologias: ["Javascript", "HTML", "CSS"],
+      url: "https://marcio-brust.github.io/RocketBlog/",
+      urlImg: blog,
+    },
+    {
+      id: 3,
+      nome: "Tabuleiro de xadrez",
+      tecnologias: ["Javascript", "HTML", "CSS"],
+      url: "https://marcio-brust.github.io/Tabuleiro-de-Xadrez/",
+      urlImg: xadrez,
+    },
+    {
+      id: 4,
+      nome: "Card-Git Márcio",
+      tecnologias: ["React"],
+      url: "https://rocketcard-cmay-3z0djpd81-marcio-brust.vercel.app/",
+      urlImg: cardMarcio,
+    },
+    {
+      id: 5,
+      nome: "Pokemon",
+      tecnologias: ["React"],
+      url: "https://pokemon-six-lemon.vercel.app",
+      urlImg: pokemon,
+    },
+    {
+      id: 6,
+      nome: "Dogs",
+      tecnologias: ["React"],
+      url: "https://dogs-ochre-nine.vercel.app",
+      urlImg: dogs,
+    },
+  ];
+
+  const [nameProjeto, setNameProjeto] = useState<string>("");
+  const [urlProjeto, setUrlProjeto] = useState<string>("");
+  const [tecnologias, setTecnologias] = useState<string[]>([]);
+
   const [anchorEl, setAnchorEl] = useState<HTMLImageElement | null>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnchorEl(event.currentTarget);
+    const nome = projetos
+      .filter((item) => item.id === +event.currentTarget.id)
+      ?.map((item) => (
+        <>
+          {setNameProjeto(item.nome)}
+          {setUrlProjeto(item.url)}
+          {setTecnologias(item.tecnologias)}
+        </>
+      ));
   };
 
   const open = Boolean(anchorEl);
@@ -33,113 +105,58 @@ export const Projects = () => {
     setAnchorEl(null);
   };
 
-  const projetos = [
-    {
-      nome: "Great coffee",
-      tecnologias: "Javascript, HTML e CSS",
-      url: "https://marcio-brust.github.io/Projeto-Great-Coffee/Great-Coffee/",
-      urlImg: coffee,
-    },
-    {
-      nome: "Cartão nubank",
-      tecnologias: "Javascript, HTML e CSS",
-      url: "https://marcio-brust.github.io/Projeto-Cart-o-Nubank/Nubank/",
-      urlImg: nubank,
-    },
-    {
-      nome: "RocketBlog",
-      tecnologias: "Javascript, HTML e CSS",
-      url: "https://marcio-brust.github.io/RocketBlog/",
-      urlImg: blog,
-    },
-    {
-      nome: "Tabuleiro de xadrez",
-      tecnologias: "Javascript, HTML e CSS",
-      url: "https://marcio-brust.github.io/Tabuleiro-de-Xadrez/",
-      urlImg: xadrez,
-    },
-    {
-      nome: "Card-Git Márcio",
-      tecnologias: "React",
-      url: "https://rocketcard-cmay-3z0djpd81-marcio-brust.vercel.app/",
-      urlImg: cardMarcio,
-    },
-    {
-      nome: "Pokemon",
-      tecnologias: "React",
-      url: "https://pokemon-six-lemon.vercel.app",
-      urlImg: pokemon,
-    },
-    {
-      nome: "Dogs",
-      tecnologias: "React",
-      url: "https://dogs-ochre-nine.vercel.app",
-      urlImg: dogs,
-    },
-  ];
-
   return (
     <ProjectStyle aria-expanded={mobile} data-aos="fade-right">
       <h1>Meus projetos</h1>
       <section>
-        <div>
-          <img
-            id={id}
-            aria-describedby={id}
-            onClick={handleClick}
-            src={coffee}
-            alt="img"
-          />
-          <Popover
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: "center",
-              horizontal: "right",
+        {projetos.map((item, index) => (
+          <div key={item.nome}>
+            <img
+              id={index.toString()}
+              aria-describedby={id}
+              onClick={handleClick}
+              src={item.urlImg}
+              alt="img"
+            />
+          </div>
+        ))}
+
+        <Popover
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "center",
+            horizontal: "right",
+          }}
+        >
+          <div
+            style={{
+              padding: "10px",
+              display: "grid",
+              gap: "10px",
+              background: "#111",
+              border: "none",
             }}
           >
+            <h1>{nameProjeto}</h1>
+            <p>
+              Tecnologias:{" "}
+              {tecnologias.map((nome) => (
+                <span key={nome} style={{ marginRight: "5px" }}>
+                  {nome}
+                </span>
+              ))}
+            </p>
             <Typography>
-              <h1>Great coffee</h1>
-              <a
-                href="https://marcio-brust.github.io/Projeto-Great-Coffee/Great-Coffee/"
-                target="_blank"
-              >
-                Confira o projeto: Click aqui
+              <a href={urlProjeto} target="_blank">
+                Confira o projeto:{" "}
+                <span style={{ color: "#777" }}> Click aqui</span>
               </a>
             </Typography>
-          </Popover>
-        </div>
-        <div>
-          <img
-            id={id}
-            aria-describedby={id}
-            onClick={handleClick}
-            src={nubank}
-            alt="img"
-          />
-          <Popover
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: "center",
-              horizontal: "right",
-            }}
-          >
-            <Typography>
-              <h1>Cartão nubank</h1>
-              <a
-                href="https://marcio-brust.github.io/Projeto-Cart-o-Nubank/Nubank/"
-                target="_blank"
-              >
-                Confira o projeto: Click aqui
-              </a>
-            </Typography>
-          </Popover>
-        </div>
+          </div>
+        </Popover>
       </section>
     </ProjectStyle>
   );

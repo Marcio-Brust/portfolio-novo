@@ -3,6 +3,14 @@ import useMedia from "../../utils/hooks/useMedia";
 import { CousesStyle } from "./Couses.style";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReactIcon from "../Svg/ReactIcon";
+import JavascriptIcon from "../Svg/javascriptIcon";
+import HtmlIcon from "../Svg/HtmlIcon";
+import CssIcon from "../Svg/CssIcon";
+import NextIcon from "../Svg/NextIcon";
+import StyledComponentIcon from "../Svg/StyledComponentIcon";
+import TailwindIcon from "../Svg/TailwindIcon";
+import TypescriptIcon from "../Svg/TypescriptIcon";
 
 export const Couses = () => {
   const mobile = useMedia("(max-width:50rem)");
@@ -50,6 +58,18 @@ export const Couses = () => {
               <p>Duração do curso: {item.duracao} horas</p>
             </div>
           ))}
+          <div>
+            <h1>Tecnologias</h1>
+
+            <JavascriptIcon />
+            <TypescriptIcon />
+            <HtmlIcon />
+            <CssIcon />
+            <ReactIcon />
+            <NextIcon />
+            <StyledComponentIcon />
+            <TailwindIcon />
+          </div>
         </section>
       </CousesStyle>
     </>

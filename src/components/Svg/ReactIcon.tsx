@@ -2,8 +2,8 @@ import { SVGProps } from "react";
 const ReactIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={16}
-    height={16}
+    width={48}
+    height={48}
     viewBox="0 0 40 40"
     {...props}
   >
