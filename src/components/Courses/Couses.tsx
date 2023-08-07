@@ -4,7 +4,7 @@ import { CousesStyle } from "./Couses.style";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactIcon from "../Svg/ReactIcon";
-import JavascriptIcon from "../Svg/javascriptIcon";
+import JavascriptIcon from "../Svg/JavascriptIcon";
 import HtmlIcon from "../Svg/HtmlIcon";
 import CssIcon from "../Svg/CssIcon";
 import NextIcon from "../Svg/NextIcon";
