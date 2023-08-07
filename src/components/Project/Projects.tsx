@@ -12,14 +12,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Popover } from "@mui/material";
 import Typography from "@mui/material/Typography/Typography";
-import ReactIcon from "../Svg/ReactIcon";
-import JavascriptIcon from "../Svg/javascriptIcon";
-import CssIcon from "../Svg/CssIcon";
-import HtmlIcon from "../Svg/HtmlIcon";
-import NextIcon from "../Svg/NextIcon";
-import TailwindIcon from "../Svg/TailwindIcon";
-import StyledComponentIcon from "../Svg/StyledComponentIcon";
-import TypescriptIcon from "../Svg/TypescriptIcon";
 
 export const Projects = () => {
   const mobile = useMedia("(max-width:50rem)");
@@ -87,7 +79,7 @@ export const Projects = () => {
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnchorEl(event.currentTarget);
-    const nome = projetos
+    projetos
       .filter((item) => item.id === +event.currentTarget.id)
       ?.map((item) => (
         <>
