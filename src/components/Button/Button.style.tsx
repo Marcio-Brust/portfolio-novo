@@ -12,7 +12,6 @@ export const ButtonStyle = styled.button`
   border: 1px solid transparent;
   transition: 0.1s;
   cursor: pointer;
-  margin-right: 30px;
   z-index: 10;
   transform: ${(prop) =>
     prop["aria-expanded"] ? "rotate(-90deg)" : "rotate(0deg)"};
