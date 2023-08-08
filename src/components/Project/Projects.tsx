@@ -7,6 +7,7 @@ import xadrez from "../../assets/WhatsApp Image 2023-07-29 at 16.40.34.jpeg";
 import cardMarcio from "../../assets/WhatsApp Image 2023-07-29 at 16.43.44.jpeg";
 import pokemon from "../../assets/pokemon.png";
 import dogs from "../../assets/login.jpg";
+import rickandmorty from "../../assets/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png";
 import useMedia from "../../utils/hooks/useMedia";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -68,6 +69,13 @@ export const Projects = () => {
       tecnologias: ["React"],
       url: "https://dogs-ochre-nine.vercel.app",
       urlImg: dogs,
+    },
+    {
+      id: 7,
+      nome: "The Rick and Morty",
+      tecnologias: ["Nextjs"],
+      url: "https://rick-and-morty-omega-bay.vercel.app/",
+      urlImg: rickandmorty,
     },
   ];
 
