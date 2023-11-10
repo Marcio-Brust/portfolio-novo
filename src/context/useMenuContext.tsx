@@ -27,7 +27,6 @@ export const useMenu = () => {
 
 export const MenuContextProvider = ({ children }: PropsWithChildren) => {
   const [isVisible, setIsVisible] = useState(false);
-
   const media = useMedia("(max-width: 50rem)");
 
   useEffect(() => {

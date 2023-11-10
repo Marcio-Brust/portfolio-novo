@@ -15,8 +15,8 @@ export const ButtonMenuMobile = ({
 }: IButtonProps) => {
   return (
     <ButtonMenuMobileStyle
-      visible={isVisible ? isVisible.toString() : null}
-      mobile={media ? media.toString() : null}
+      visible={(isVisible && isVisible.toString()) || null}
+      mobile={(media && media.toString()) || null}
       onClick={() => setIsVisible(!isVisible)}
       aria-expanded={isVisible}
       {...props}
