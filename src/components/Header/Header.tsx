@@ -1,17 +1,25 @@
-import useMedia from "../../utils/hooks/useMedia";
-import { Button } from "../Button/Button";
+import { useMenu } from "../../context/useMenuContext";
+import { ButtonMenuMobile } from "../Button/ButtonMenuMobile";
 import { MenuMobile } from "../MenuMobile/MenuMobile";
 import { NavMenu } from "../Nav/NavMenu";
 import { HeaderStyle } from "./Header.style";
 
 export const Header = () => {
-  const mobile = useMedia("(max-width:50rem)");
+  const { media, isVisible, setIsVisible } = useMenu();
 
   return (
     <HeaderStyle>
       <h1>Dev</h1>
-      <Button />
-      {mobile ? <MenuMobile /> : <NavMenu />}
+      <ButtonMenuMobile
+        media={media}
+        isVisible={isVisible}
+        setIsVisible={setIsVisible}
+      />
+      {media ? (
+        <MenuMobile isVisible={isVisible} setIsVisible={setIsVisible} />
+      ) : (
+        <NavMenu />
+      )}
     </HeaderStyle>
   );
 };

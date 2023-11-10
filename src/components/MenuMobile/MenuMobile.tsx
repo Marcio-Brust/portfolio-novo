@@ -1,12 +1,19 @@
-import { useContext } from "react";
 import { MenuMobileStyle } from "./MenuMobile.style";
-import { MenuContext } from "../../Context/MenuContext";
+import { ComponentProps, Dispatch, SetStateAction } from "react";
 
-export const MenuMobile = () => {
-  const { isVisible } = useContext(MenuContext);
+type INavProps = ComponentProps<"nav"> & {
+  media?: boolean;
+  isVisible: boolean;
+  setIsVisible: Dispatch<SetStateAction<boolean>>;
+};
 
+export const MenuMobile = ({
+  isVisible,
+  setIsVisible,
+  ...props
+}: INavProps) => {
   return (
-    <MenuMobileStyle aria-expanded={isVisible}>
+    <MenuMobileStyle aria-expanded={isVisible} {...props}>
       {" "}
       <li>
         <a href="https://github.com/Marcio-Brust" target="_blanck">

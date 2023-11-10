@@ -3,7 +3,7 @@ import { Header } from "./components/Header/Header";
 import { GlobalStyd } from "./GlobalStyled";
 import { Couses } from "./components/Courses/Couses";
 import { Projects } from "./components/Project/Projects";
-import { MenuContextProvider } from "./Context/MenuContext";
+import { MenuContextProvider } from "./context/useMenuContext";
 import { Footer } from "./components/Footer/Footer";
 
 function App() {

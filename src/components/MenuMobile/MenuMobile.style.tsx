@@ -5,7 +5,7 @@ export const MenuMobileStyle = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 60px;
+  padding-top: 60px;
   z-index: 1;
   background: #111;
   transition: 0.1s;
@@ -13,10 +13,10 @@ export const MenuMobileStyle = styled.nav`
 
   @keyframes showMenu {
     from {
-      margin-top: 0;
+      margin-top: -80px;
     }
     to {
-      margin-top: 60px;
+      margin-top: 0px;
     }
   }
 

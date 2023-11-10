@@ -1,20 +1,24 @@
 import styled from "styled-components";
 
-export const ButtonStyle = styled.button`
+type IButtonProps = {
+  mobile: boolean | string | null;
+  visible: boolean | string | null;
+};
+
+export const ButtonMenuMobileStyle = styled.button<IButtonProps>`
   background: #eee;
   border-radius: 0.2rem;
   height: 30px;
   width: 30px;
   padding: 0px;
-  display: flex;
+  display: ${({ mobile }) => (mobile ? "flex" : "none")};
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
   transition: 0.1s;
   cursor: pointer;
   z-index: 10;
-  transform: ${(prop) =>
-    prop["aria-expanded"] ? "rotate(-90deg)" : "rotate(0deg)"};
+  transform: ${({ visible }) => (visible ? "rotate(-90deg)" : "rotate(0deg)")};
 
   &::after {
     content: "";

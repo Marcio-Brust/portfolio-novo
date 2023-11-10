@@ -8,6 +8,7 @@ import cardMarcio from "../../assets/WhatsApp Image 2023-07-29 at 16.43.44.jpeg"
 import pokemon from "../../assets/pokemon.png";
 import dogs from "../../assets/login.jpg";
 import rickandmorty from "../../assets/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png";
+import aprovaEnem from "../../assets/logo_home.webp";
 import useMedia from "../../utils/hooks/useMedia";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -76,6 +77,13 @@ export const Projects = () => {
       tecnologias: ["Nextjs"],
       url: "https://rick-and-morty-omega-bay.vercel.app/",
       urlImg: rickandmorty,
+    },
+    {
+      id: 8,
+      nome: "Aprova no Enem",
+      tecnologias: ["Nextjs, Tailwind"],
+      url: "https://aprova-no-enem.vercel.app/",
+      urlImg: aprovaEnem,
     },
   ];
 
