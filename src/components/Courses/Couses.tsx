@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import useMedia from "../../utils/hooks/useMedia";
 import { CousesStyle } from "./Couses.style";
 import AOS from "aos";
@@ -14,7 +14,7 @@ import TypescriptIcon from "../Svg/TypescriptIcon";
 import { Popover, Typography } from "@mui/material";
 
 export const Couses = () => {
-  const mobile = useMedia("(max-width:50rem)");
+  const media = useMedia("(max-width:50rem)");
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -47,13 +47,12 @@ export const Couses = () => {
     },
   ];
 
-  const [name, setName] = useState<string>("");
-
+  const [name, setName] = useState("");
   const [anchorEl, setAnchorEl] = useState<SVGSVGElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<SVGSVGElement>) => {
-    setAnchorEl(event.currentTarget);
-    setName(event.currentTarget.id);
+  const handleClick = ({ currentTarget }: MouseEvent<SVGSVGElement>) => {
+    setAnchorEl(currentTarget);
+    setName(currentTarget.id);
   };
 
   const open = Boolean(anchorEl);
@@ -65,7 +64,10 @@ export const Couses = () => {
 
   return (
     <>
-      <CousesStyle aria-expanded={mobile} data-aos="fade-right">
+      <CousesStyle
+        mobile={(media && media.toString()) || null}
+        data-aos="fade-right"
+      >
         <h1>Meus cursos</h1>
         <section>
           {cursos.map((item, index) => (

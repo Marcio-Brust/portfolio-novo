@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const CousesStyle = styled.section`
+type ICousesprops = {
+  mobile: boolean | string | null;
+};
+
+export const CousesStyle = styled.section<ICousesprops>`
   max-width: 800px;
   margin: 0 auto;
   margin-top: 100px;
@@ -16,8 +20,7 @@ export const CousesStyle = styled.section`
 
   section {
     display: grid;
-    grid-template-columns: ${(prop) =>
-      prop["aria-expanded"] ? "1fr" : "1fr 1fr"};
+    grid-template-columns: ${({ mobile }) => (mobile ? "1fr" : "1fr 1fr")};
   }
 
   div {

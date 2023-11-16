@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ProjectStyle = styled.section`
+type IProject = {
+  mobile: boolean | string | null;
+};
+
+export const ProjectStyle = styled.section<IProject>`
   h1 {
     font-size: 3rem;
     text-align: center;
@@ -9,8 +13,7 @@ export const ProjectStyle = styled.section`
 
   section {
     display: grid;
-    grid-template-columns: ${(prop) =>
-      prop["aria-expanded"] ? "1fr" : "1fr 1fr 1fr"};
+    grid-template-columns: ${({ mobile }) => (mobile ? "1fr" : "1fr 1fr 1fr")};
     max-width: 800px;
     margin: 0 auto;
     gap: 20px;

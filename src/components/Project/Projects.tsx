@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { ProjectStyle } from "./Projetcts.style";
 import coffee from "../../assets/rocket-coffee.png";
 import nubank from "../../assets/Nubank_logo_2021.svg.png";
@@ -16,7 +16,7 @@ import { Popover } from "@mui/material";
 import Typography from "@mui/material/Typography/Typography";
 
 export const Projects = () => {
-  const mobile = useMedia("(max-width:50rem)");
+  const media = useMedia("(max-width:50rem)");
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -87,21 +87,21 @@ export const Projects = () => {
     },
   ];
 
-  const [nameProjeto, setNameProjeto] = useState<string>("");
-  const [urlProjeto, setUrlProjeto] = useState<string>("");
+  const [nameProjeto, setNameProjeto] = useState("");
+  const [urlProjeto, setUrlProjeto] = useState("");
   const [tecnologias, setTecnologias] = useState<string[]>([]);
 
   const [anchorEl, setAnchorEl] = useState<HTMLImageElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = ({ currentTarget }: MouseEvent<HTMLImageElement>) => {
+    setAnchorEl(currentTarget);
     projetos
-      .filter((item) => item.id === +event.currentTarget.id)
-      ?.map((item) => (
+      .filter(({ id }) => id === +currentTarget.id)
+      ?.map(({ nome, url, tecnologias }) => (
         <>
-          {setNameProjeto(item.nome)}
-          {setUrlProjeto(item.url)}
-          {setTecnologias(item.tecnologias)}
+          {setNameProjeto(nome)}
+          {setUrlProjeto(url)}
+          {setTecnologias(tecnologias)}
         </>
       ));
   };
@@ -114,16 +114,19 @@ export const Projects = () => {
   };
 
   return (
-    <ProjectStyle aria-expanded={mobile} data-aos="fade-right">
+    <ProjectStyle
+      mobile={(media && media.toString()) || null}
+      data-aos="fade-right"
+    >
       <h1>Meus projetos</h1>
       <section>
-        {projetos.map((item, index) => (
-          <div key={item.nome}>
+        {projetos.map(({nome, urlImg}, index) => (
+          <div key={nome}>
             <img
               id={index.toString()}
               aria-describedby={id}
               onClick={handleClick}
-              src={item.urlImg}
+              src={urlImg}
               alt="img"
             />
           </div>

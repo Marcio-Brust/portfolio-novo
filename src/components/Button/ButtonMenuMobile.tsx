@@ -18,7 +18,6 @@ export const ButtonMenuMobile = ({
       visible={(isVisible && isVisible.toString()) || null}
       mobile={(media && media.toString()) || null}
       onClick={() => setIsVisible(!isVisible)}
-      aria-expanded={isVisible}
       {...props}
     ></ButtonMenuMobileStyle>
   );
