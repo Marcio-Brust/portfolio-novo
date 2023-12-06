@@ -20,8 +20,7 @@ const MenuContext = createContext<IMenuContextTypes | null>(null);
 
 export const useMenu = () => {
   const context = useContext(MenuContext);
-  if (context === null)
-    throw new Error("useContext deve estar dentro do Provider");
+  if (!context) throw new Error("useContext deve estar dentro do Provider");
   return context;
 };
 
