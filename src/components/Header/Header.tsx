@@ -5,7 +5,7 @@ import { NavMenu } from "../Nav/NavMenu";
 import { HeaderStyle } from "./Header.style";
 
 export const Header = () => {
-  const { media, isVisible, setIsVisible } = useMenu();
+  const { media, isVisible, toggleVisible } = useMenu();
 
   return (
     <HeaderStyle>
@@ -13,13 +13,9 @@ export const Header = () => {
       <ButtonMenuMobile
         media={media}
         isVisible={isVisible}
-        setIsVisible={setIsVisible}
+        onClick={toggleVisible}
       />
-      {media ? (
-        <MenuMobile isVisible={isVisible} setIsVisible={setIsVisible} />
-      ) : (
-        <NavMenu />
-      )}
+      {media ? <MenuMobile isVisible={isVisible} /> : <NavMenu />}
     </HeaderStyle>
   );
 };

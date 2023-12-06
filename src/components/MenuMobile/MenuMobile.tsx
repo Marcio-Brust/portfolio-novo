@@ -1,15 +1,14 @@
 import { MenuMobileStyle } from "./MenuMobile.style";
-import { ComponentProps, Dispatch, SetStateAction } from "react";
+import { ComponentProps } from "react";
 
 type INavProps = ComponentProps<"nav"> & {
   media?: boolean;
   isVisible: boolean;
-  setIsVisible: Dispatch<SetStateAction<boolean>>;
 };
 
 export const MenuMobile = ({
   isVisible,
-  setIsVisible,
+
   ...props
 }: INavProps) => {
   return (
