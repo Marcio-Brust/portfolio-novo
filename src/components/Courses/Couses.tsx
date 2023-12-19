@@ -45,6 +45,11 @@ export const Couses = () => {
       instituicao: "Udemy",
       duracao: "13",
     },
+    {
+      título: "React com typescript",
+      instituicao: "Origamid",
+      duracao: "11",
+    },
   ];
 
   const [name, setName] = useState("");

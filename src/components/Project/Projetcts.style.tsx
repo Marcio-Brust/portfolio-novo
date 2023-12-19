@@ -27,8 +27,8 @@ export const ProjectStyle = styled.section<IProject>`
     }
 
     img {
-      width: 150px;
-      height: 150px;
+      width: 250px;
+      height: 250px;
       object-fit: contain;
       cursor: pointer;
     }

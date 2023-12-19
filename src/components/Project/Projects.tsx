@@ -1,14 +1,15 @@
 import { MouseEvent, useEffect, useState } from "react";
 import { ProjectStyle } from "./Projetcts.style";
-import coffee from "../../assets/rocket-coffee.png";
-import nubank from "../../assets/Nubank_logo_2021.svg.png";
-import blog from "../../assets/post-1.png";
-import xadrez from "../../assets/WhatsApp Image 2023-07-29 at 16.40.34.jpeg";
-import cardMarcio from "../../assets/WhatsApp Image 2023-07-29 at 16.43.44.jpeg";
-import pokemon from "../../assets/pokemon.png";
-import dogs from "../../assets/login.jpg";
-import rickandmorty from "../../assets/515-5152607_freetoedit-cute-rick-morty-rickandmorty-wallpaper-black-and.png";
-import aprovaEnem from "../../assets/logo_home.webp";
+import coffee from "../../assets/Screenshot from 2023-12-19 19-42-44.png";
+import nubank from "../../assets/Screenshot from 2023-12-19 19-45-59.png";
+import blog from "../../assets/Screenshot from 2023-12-19 19-47-10.png";
+import xadrez from "../../assets/Screenshot from 2023-12-19 19-44-32.png";
+import pokemon from "../../assets/Screenshot from 2023-12-19 19-56-47.png";
+import fraterb from "../../assets/Screenshot from 2023-12-19 19-54-30.png";
+import dogs from "../../assets/Screenshot from 2023-12-19 19-49-24.png";
+import rickandmorty from "../../assets/Screenshot from 2023-12-19 19-40-27.png";
+import aprovaEnem from "../../assets/Screenshot from 2023-12-19 19-57-53.png";
+import PhoroPodDev from "../../assets/Screenshot from 2023-12-19 19-33-01.png";
 import useMedia from "../../utils/hooks/useMedia";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -52,10 +53,10 @@ export const Projects = () => {
     },
     {
       id: 4,
-      nome: "Card-Git Márcio",
-      tecnologias: ["React"],
+      nome: "Fraterb",
+      tecnologias: ["Nextjs,Tailwind"],
       url: "https://rocketcard-cmay-3z0djpd81-marcio-brust.vercel.app/",
-      urlImg: cardMarcio,
+      urlImg: fraterb,
     },
     {
       id: 5,
@@ -84,6 +85,13 @@ export const Projects = () => {
       tecnologias: ["Nextjs, Tailwind"],
       url: "https://aprova-no-enem.vercel.app/",
       urlImg: aprovaEnem,
+    },
+    {
+      id: 9,
+      nome: "PodDev",
+      tecnologias: ["Nextjs, Tailwind"],
+      url: "https://poddev.vercel.app/",
+      urlImg: PhoroPodDev,
     },
   ];
 
@@ -120,7 +128,7 @@ export const Projects = () => {
     >
       <h1>Meus projetos</h1>
       <section>
-        {projetos.map(({nome, urlImg}, index) => (
+        {projetos.map(({ nome, urlImg }, index) => (
           <div key={nome}>
             <img
               id={index.toString()}
