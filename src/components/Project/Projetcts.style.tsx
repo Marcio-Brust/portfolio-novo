@@ -19,16 +19,12 @@ export const ProjectStyle = styled.section<IProject>`
     gap: 20px;
 
     div {
-      width: 150px;
-      height: 150px;
       display: grid;
-      align-items: center;
-      justify-self: center;
+      place-items: center;
     }
 
     img {
       width: 250px;
-      height: 250px;
       object-fit: contain;
       cursor: pointer;
     }
