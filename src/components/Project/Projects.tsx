@@ -146,14 +146,15 @@ export const Projects = () => {
           anchorEl={anchorEl}
           onClose={handleClose}
           anchorOrigin={{
-            vertical: "center",
-            horizontal: "right",
+            vertical: "top",
+            horizontal: "center",
           }}
         >
           <div
             style={{
-              padding: "10px",
-              display: "grid",
+              padding: "15px",
+              display: "flex",
+              flexDirection: "column",
               gap: "10px",
               background: "#111",
               border: "none",
