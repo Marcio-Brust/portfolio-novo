@@ -10,6 +10,7 @@ import dogs from "../../assets/Screenshot from 2023-12-19 19-49-24.png";
 import rickandmorty from "../../assets/Screenshot from 2023-12-19 19-40-27.png";
 import aprovaEnem from "../../assets/Screenshot from 2023-12-19 19-57-53.png";
 import PhoroPodDev from "../../assets/Screenshot from 2023-12-19 19-33-01.png";
+import nike from "../../assets/Screenshot from 2023-12-20 18-44-36.png";
 import mago from "../../assets/WhatsApp Image 2024-01-04 at 09.52.03.jpeg";
 import useMedia from "../../utils/hooks/useMedia";
 import AOS from "aos";
@@ -96,10 +97,10 @@ export const Projects = () => {
     },
     {
       id: 10,
-      nome: "Mago da Loteria",
+      nome: "Nike Air",
       tecnologias: ["Nextjs, Tailwind"],
-      url: "https://mago-da-loteria-site.vercel.app/",
-      urlImg: mago,
+      url: "https://nikeair.vercel.app/",
+      urlImg: nike,
     },
     {
       id: 11,
