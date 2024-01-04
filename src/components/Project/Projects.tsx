@@ -106,7 +106,7 @@ export const Projects = () => {
       id: 11,
       nome: "Mago da Loteria",
       tecnologias: ["Nextjs, Tailwind"],
-      url: "https://mago-da-loteria-site.vercel.app/",
+      url: "https://www.magodaloteria.com.br/",
       urlImg: mago,
     },
   ];
