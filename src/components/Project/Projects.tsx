@@ -188,7 +188,7 @@ export const Projects = () => {
             <Typography>
               <a href={urlProjeto} target="_blank">
                 Confira o projeto:{" "}
-                <span style={{ color: "#777" }}> Click aqui</span>
+                <span style={{ color: "#777" }}> Clique aqui</span>
               </a>
             </Typography>
           </div>
