@@ -1,6 +1,6 @@
 import { NavStyle } from "./NavMenu.style";
 
-const link = [
+const links = [
   {
     link: "https://github.com/Marcio-Brust",
     value: "Github",
@@ -15,7 +15,7 @@ export const NavMenu = () => {
   return (
     <>
       <NavStyle>
-        {link.map(({ link, value }) => (
+        {links.map(({ link, value }) => (
           <li>
             <a href={link} target="_blank">
               {value}
