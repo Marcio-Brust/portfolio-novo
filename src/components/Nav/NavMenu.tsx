@@ -16,7 +16,7 @@ export const NavMenu = () => {
     <>
       <NavStyle>
         {links.map(({ link, value }) => (
-          <li>
+          <li key={value}>
             <a href={link} target="_blank">
               {value}
             </a>
